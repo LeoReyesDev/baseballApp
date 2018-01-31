@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="appBaseball.js"></script>
+  </head>
+  <body>
+
+    <div id="container" ng-app="myApp" ng-controller="myCtrl">
+      <div id="menuDate">
+         <input id="date" type="date" value="2014-03-06">
+         <button ng-click="search()">SEARCH</button>
+         <h3>Please select date for search results of games!</h3>
+         <div id="dateSelected"></div>
+      </div>
+
+      <div class="windowScore" ng-repeat="x in dataScoreGame">
+        <div class="status">{{x.status.status}}</div>
+        <div class="contentScoreHome">
+          <div class="teamHome">{{x.home_team_name}}</div>
+          <div class="scoreHome">{{x.linescore.h.home}}</div>
+        </div>
+        <div class="contentScoreHome">
+          <div class="teamAway">{{x.away_team_name}}</div>
+          <div class="scoreAway">{{x.linescore.h.away}}</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
